@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styls.css">
+    <title>Dynamic Island</title>
+    <style>
+        body{
+    background: #03000b;
+    font-family: sans-serif;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5em;
+    /* background-color: #16FF00; */
+}
+
+.dynamicisland{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 140px;
+    height: 40px;
+    background: #000;
+    border-radius: 20px;
+    animation: 3s ease-out 0s 1 onload;
+    transition: 400ms;
+    box-shadow: 0 -1px 1px .1px #ffffffd1,0 -1px 4px 1px #af23ff85, 0 -1px 25px 4px #af23ff70;
+
+}
+
+.dynamicisland:hover{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    height: 40px;
+    background: #000;
+    border-radius: 20px;
+    animation: 3s ease-out 0s 1 onload;
+    transition: 400ms;
+    box-shadow: 0 -1px 1px .1px #ffffffd1,0 -1px 4px 1px #af23ff85, 0 -1px 25px 4px #af23ff70;
+
+
+}
+
+
+@keyframes onload{
+    0%{
+        box-shadow: 0 14px 1px -13px #ffffffd1,
+         0 14px 4px -10px #af23ff85;
+    }50%{
+        box-shadow: -5 0px 1px -4px #ffffffd1,
+         -5 0px 8px -3px #af23ff85;
+    }100%{
+        box-shadow: 0 -4px 1px -4px #ffffffd1,
+         0 -5px 4px -3px #af23ff85;
+    }
+}
+.sh1{
+    padding: 15px;
+    text-align: center;
+}
+.sh2{
+    padding: 15px;
+    text-align: center;
+}
+.sh3{
+    padding: 15px;
+    text-align: center;
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div id="di" class="dynamicisland" onclick="toggleClicked(this)">
+            <div class="sh1" id="sh">
+            <a href="https://www.youtube.com"><span><ion-icon name="home-outline"></ion-icon></span></a>
+            </div>
+            <div class="sh2">
+            <a href="https://www.youtube.com"><span><ion-icon name="people-outline"></ion-icon></span></a>
+            </div>
+            <div class="sh3">
+            <a href="https://www.youtube.com"><span><ion-icon name="call-outline"></ion-icon></span></a>
+            </div>
+        </div>
+    </div>
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+     function toggleClicked(element) {
+            element.classList.toggle("dynamicisland:hover");
+        }
+</script>
+</body>
+</html>
